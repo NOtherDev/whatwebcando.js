@@ -1,0 +1,20 @@
+{
+  "name": "whatwebcando",
+  "version": "0.0.1",
+  "description": "",
+  "module": "src/index.js",
+  "typings": "src/index.d.ts",
+  "scripts": {
+    "build": "tsc --declaration"
+  },
+  "author": "Adam Bar <hi@adambar.pl> (https://github.com/NOtherDev)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NOtherDev/whatwebcando.js.git"
+  },
+  "devDependencies": {
+    "@types/node": "^9.6.6",
+    "typescript": "^2.8.1"
+  }
+}
