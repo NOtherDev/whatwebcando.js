@@ -5,11 +5,14 @@ function capitalizeFirst(str: string): string {
 export default class FeatureTest {
     private constructor(public isSupported: boolean, public prefixedWith?: string) {}
 
+    public subtest<T>(name: keyof T, subtest: FeatureTest): this & T {
+        return Object.assign(this, {[name]: subtest} as any)
+    }
+
     static Raw = (test: () => boolean): FeatureTest =>
         new FeatureTest(test())
 
-    static ContainedIn = (containerName: string,
-                          container: any,
+    static ContainedIn = (container: any,
                           propertyName: string): FeatureTest => {
 
         if (!container) {
@@ -37,12 +40,11 @@ export default class FeatureTest {
     }
 
     static NavigatorContains = (propertyName: string): FeatureTest =>
-        FeatureTest.ContainedIn('navigator', window.navigator, propertyName)
+        FeatureTest.ContainedIn(window.navigator, propertyName)
 
     static WindowContains = (propertyName: string): FeatureTest =>
-        FeatureTest.ContainedIn('window', window, propertyName)
+        FeatureTest.ContainedIn(window, propertyName)
 
     static ServiceWorkerRegistrationContains = (propertyName: string): FeatureTest =>
-        FeatureTest.ContainedIn('ServiceWorkerRegistration',
-            window.ServiceWorkerRegistration && window.ServiceWorkerRegistration.prototype, propertyName)
+        FeatureTest.ContainedIn(window.ServiceWorkerRegistration && window.ServiceWorkerRegistration.prototype, propertyName)
 }
