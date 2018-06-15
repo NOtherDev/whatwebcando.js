@@ -1,5 +1,5 @@
 import FeatureTest from '../featureTest'
 
-const backgroundSync = FeatureTest.ServiceWorkerRegistrationContains('sync')
+const backgroundSync = FeatureTest.serviceWorkerRegistrationContains('sync')
 
 export default backgroundSync

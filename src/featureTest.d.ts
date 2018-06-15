@@ -8,9 +8,10 @@ export default class FeatureTest {
     prefixedWith: string | undefined;
     private constructor();
     subtest<T>(name: keyof T, subtest: FeatureTest): this & T;
-    static Raw: (test: () => boolean) => FeatureTest;
-    static ContainedIn: (container: any, propertyName: string) => FeatureTest;
-    static NavigatorContains: (propertyName: string) => FeatureTest;
-    static WindowContains: (propertyName: string) => FeatureTest;
-    static ServiceWorkerRegistrationContains: (propertyName: string) => FeatureTest;
+    static raw: (test: () => boolean) => FeatureTest;
+    static containedIn: (container: any, propertyName: string) => FeatureTest;
+    static navigatorContains: (propertyName: string) => FeatureTest;
+    static documentContains: (propertyName: string) => FeatureTest;
+    static windowContains: (propertyName: string) => FeatureTest;
+    static serviceWorkerRegistrationContains: (propertyName: string) => FeatureTest;
 }

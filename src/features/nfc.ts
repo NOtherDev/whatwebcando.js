@@ -1,5 +1,5 @@
 import FeatureTest from '../featureTest'
 
-export const nfc = FeatureTest.NavigatorContains('nfc')
+export const nfc = FeatureTest.navigatorContains('nfc')
 
 export default nfc

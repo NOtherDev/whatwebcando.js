@@ -15,10 +15,10 @@ export default class FeatureTest {
         return Object.assign(this, {[name]: subtest} as any)
     }
 
-    static Raw = (test: () => boolean): FeatureTest =>
+    static raw = (test: () => boolean): FeatureTest =>
         new FeatureTest(test())
 
-    static ContainedIn = (container: any,
+    static containedIn = (container: any,
                           propertyName: string): FeatureTest => {
 
         if (!container) {
@@ -45,12 +45,15 @@ export default class FeatureTest {
         return new FeatureTest(false)
     }
 
-    static NavigatorContains = (propertyName: string): FeatureTest =>
-        FeatureTest.ContainedIn(window.navigator, propertyName)
+    static navigatorContains = (propertyName: string): FeatureTest =>
+        FeatureTest.containedIn(window.navigator, propertyName)
 
-    static WindowContains = (propertyName: string): FeatureTest =>
-        FeatureTest.ContainedIn(window, propertyName)
+    static documentContains = (propertyName: string): FeatureTest =>
+        FeatureTest.containedIn(document, propertyName)
 
-    static ServiceWorkerRegistrationContains = (propertyName: string): FeatureTest =>
-        FeatureTest.ContainedIn(window.ServiceWorkerRegistration && window.ServiceWorkerRegistration.prototype, propertyName)
+    static windowContains = (propertyName: string): FeatureTest =>
+        FeatureTest.containedIn(window, propertyName)
+
+    static serviceWorkerRegistrationContains = (propertyName: string): FeatureTest =>
+        FeatureTest.containedIn(window.ServiceWorkerRegistration && window.ServiceWorkerRegistration.prototype, propertyName)
 }

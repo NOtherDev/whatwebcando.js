@@ -6,6 +6,6 @@ export default class FeatureAsyncTest {
 
     async result(): Promise<FeatureTest> {
         const result = await this.test()
-        return FeatureTest.Raw(() => result)
+        return FeatureTest.raw(() => result)
     }
 }

@@ -6,7 +6,7 @@ declare global {
     }
 }
 
-export const pushNotifications = FeatureTest.ServiceWorkerRegistrationContains('pushManager')
-    .subtest<{silent: FeatureTest}>('silent', FeatureTest.ContainedIn(navigator.budget, 'reserve'))
+export const pushNotifications = FeatureTest.serviceWorkerRegistrationContains('pushManager')
+    .subtest<{silent: FeatureTest}>('silent', FeatureTest.containedIn(navigator.budget, 'reserve'))
 
 export default pushNotifications

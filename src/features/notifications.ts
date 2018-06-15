@@ -7,7 +7,7 @@ declare global {
     }
 }
 
-export const notifications = FeatureTest.Raw(() => {
+export const notifications = FeatureTest.raw(() => {
     try {
         if (!('Notification' in window)) {
             return false
