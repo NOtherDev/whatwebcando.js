@@ -2,6 +2,12 @@ function capitalizeFirst(str: string): string {
     return str.substr(0, 1).toUpperCase() + str.substr(1)
 }
 
+declare global {
+    interface Window {
+        ServiceWorkerRegistration: Function
+    }
+}
+
 export default class FeatureTest {
     private constructor(public isSupported: boolean, public prefixedWith?: string) {}
 

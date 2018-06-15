@@ -1,65 +1,61 @@
-import FeatureTest from './featureTest'
+import backgroundSync_ from './features/backgroundSync'
+export const backgroundSync = backgroundSync_
 
-declare global {
-    interface Window {
-        ServiceWorkerRegistration: Function
-    }
-    interface DOMTokenList {
-        supports(token: string): boolean
-    }
-    interface HTMLLinkElement {
-        relList: DOMTokenList
-    }
-    interface Navigator {
-        budget: any
-        storage: any
-    }
-    interface NotificationOptions {
-        silent?: boolean
-        vibrate?: number
-    }
-}
+import bluetooth_ from './features/bluetooth'
+export const bluetooth = bluetooth_
 
-export const backgroundSync = FeatureTest.ServiceWorkerRegistrationContains('sync')
-export const bluetooth = FeatureTest.NavigatorContains('bluetooth')
+import credentials_ from './features/credentials'
+export const credentials = credentials_
 
-export const credentials = FeatureTest.WindowContains('credentials')
-    .subtest<{password: FeatureTest}>('password', FeatureTest.WindowContains('PasswordCredential'))
-    .subtest<{federated: FeatureTest}>('federated', FeatureTest.WindowContains('FederatedCredential'))
+import deviceMemory_ from './features/deviceMemory'
+export const deviceMemory = deviceMemory_
 
-export const deviceMemory = FeatureTest.NavigatorContains('deviceMemory')
-export const geolocation = FeatureTest.NavigatorContains('geolocation')
-export const installedRelatedApps = FeatureTest.NavigatorContains('getInstalledRelatedApps')
-export const manifest = FeatureTest.Raw(() => document.createElement('link').relList.supports('manifest'))
-export const mediaCapabilities = FeatureTest.NavigatorContains('mediaCapabilities')
-export const mediaSession = FeatureTest.NavigatorContains('mediaSession')
-export const nfc = FeatureTest.NavigatorContains('nfc')
+import geolocation_ from './features/geolocation'
+export const geolocation = geolocation_
 
-export const notifications = FeatureTest.Raw(() => {
-    try {
-        if (!('Notification' in window)) {
-            return false
-        }
-        if ('silent' in Notification.prototype) {
-            new Notification('test', {silent: true, vibrate: 100})
-        }
-        return true
-    } catch (e) {
-        return e.message.indexOf('Silent') !== -1
-    }
-})
+import installedRelatedApps_ from './features/installedRelatedApps'
+export const installedRelatedApps = installedRelatedApps_
 
-export const offlineCache = FeatureTest.WindowContains('caches')
-export const paymentRequest = FeatureTest.WindowContains('paymentRequest')
-export const persistentStorageRequest = FeatureTest.ContainedIn(navigator.storage, 'persist')
-export const pushNotifications = FeatureTest.ServiceWorkerRegistrationContains('pushManager')
-    .subtest<{silent: FeatureTest}>('silent', FeatureTest.ContainedIn(navigator.budget, 'reserve'))
+import manifest_ from './features/manifest'
+export const manifest  = manifest_
 
-export const serviceWorker = FeatureTest.NavigatorContains('serviceWorker')
-export const share = FeatureTest.NavigatorContains('share')
-export const storageEstimation = FeatureTest.ContainedIn(navigator.storage, 'estimate')
+import mediaCapabilities_ from './features/mediaCapabilities'
+export const mediaCapabilities = mediaCapabilities_
 
-export default {
+import mediaSession_ from './features/mediaSession'
+export const mediaSession = mediaSession_
+
+import nfc_ from './features/nfc'
+export const nfc = nfc_
+
+import offlineCache_ from './features/offlineCache'
+export const offlineCache = offlineCache_
+
+import paymentRequest_ from './features/paymentRequest'
+export const paymentRequest = paymentRequest_
+
+import persistentStorageRequest_ from './features/persistentStorageRequest'
+export const persistentStorageRequest  = persistentStorageRequest_
+
+import pushNotifications_ from './features/pushNotifications'
+export const pushNotifications = pushNotifications_
+
+import storageEstimation_ from './features/storageEstimation'
+export const storageEstimation = storageEstimation_
+
+import share_ from './features/share'
+export const share = share_
+
+import serviceWorker_ from './features/serviceWorker'
+export const serviceWorker = serviceWorker_
+
+import notifications_ from './features/notifications'
+export const notifications = notifications_
+
+// import needed for TypeScript to be able to generate proper type definitions for re-exports
+import FeaturesTest from './featureTest'
+
+const features = {
     backgroundSync,
     bluetooth,
     credentials,
@@ -79,3 +75,5 @@ export default {
     share,
     storageEstimation
 }
+
+export default features

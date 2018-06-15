@@ -1,71 +1,52 @@
-import FeatureTest from './featureTest';
-declare global  {
-    interface Window {
-        ServiceWorkerRegistration: Function;
-    }
-    interface DOMTokenList {
-        supports(token: string): boolean;
-    }
-    interface HTMLLinkElement {
-        relList: DOMTokenList;
-    }
-    interface Navigator {
-        budget: any;
-        storage: any;
-    }
-    interface NotificationOptions {
-        silent?: boolean;
-        vibrate?: number;
-    }
-}
-export declare const backgroundSync: FeatureTest;
-export declare const bluetooth: FeatureTest;
-export declare const credentials: FeatureTest & {
-    password: FeatureTest;
+export declare const backgroundSync: FeaturesTest;
+export declare const bluetooth: FeaturesTest;
+export declare const credentials: FeaturesTest & {
+    password: FeaturesTest;
 } & {
-    federated: FeatureTest;
+    federated: FeaturesTest;
 };
-export declare const deviceMemory: FeatureTest;
-export declare const geolocation: FeatureTest;
-export declare const installedRelatedApps: FeatureTest;
-export declare const manifest: FeatureTest;
-export declare const mediaCapabilities: FeatureTest;
-export declare const mediaSession: FeatureTest;
-export declare const nfc: FeatureTest;
-export declare const notifications: FeatureTest;
-export declare const offlineCache: FeatureTest;
-export declare const paymentRequest: FeatureTest;
-export declare const persistentStorageRequest: FeatureTest;
-export declare const pushNotifications: FeatureTest & {
-    silent: FeatureTest;
+export declare const deviceMemory: FeaturesTest;
+export declare const geolocation: FeaturesTest;
+export declare const installedRelatedApps: FeaturesTest;
+export declare const manifest: FeaturesTest;
+export declare const mediaCapabilities: FeaturesTest;
+export declare const mediaSession: FeaturesTest;
+export declare const nfc: FeaturesTest;
+export declare const offlineCache: FeaturesTest;
+export declare const paymentRequest: FeaturesTest;
+export declare const persistentStorageRequest: FeaturesTest;
+export declare const pushNotifications: FeaturesTest & {
+    silent: FeaturesTest;
 };
-export declare const serviceWorker: FeatureTest;
-export declare const share: FeatureTest;
-export declare const storageEstimation: FeatureTest;
-declare const _default: {
-    backgroundSync: FeatureTest;
-    bluetooth: FeatureTest;
-    credentials: FeatureTest & {
-        password: FeatureTest;
+export declare const storageEstimation: FeaturesTest;
+export declare const share: FeaturesTest;
+export declare const serviceWorker: FeaturesTest;
+export declare const notifications: FeaturesTest;
+import FeaturesTest from './featureTest';
+declare const features: {
+    backgroundSync: FeaturesTest;
+    bluetooth: FeaturesTest;
+    credentials: FeaturesTest & {
+        password: FeaturesTest;
     } & {
-        federated: FeatureTest;
+        federated: FeaturesTest;
     };
-    deviceMemory: FeatureTest;
-    geolocation: FeatureTest;
-    installedRelatedApps: FeatureTest;
-    manifest: FeatureTest;
-    mediaCapabilities: FeatureTest;
-    mediaSession: FeatureTest;
-    nfc: FeatureTest;
-    notifications: FeatureTest;
-    offlineCache: FeatureTest;
-    paymentRequest: FeatureTest;
-    persistentStorageRequest: FeatureTest;
-    pushNotifications: FeatureTest & {
-        silent: FeatureTest;
+    deviceMemory: FeaturesTest;
+    geolocation: FeaturesTest;
+    installedRelatedApps: FeaturesTest;
+    manifest: FeaturesTest;
+    mediaCapabilities: FeaturesTest;
+    mediaSession: FeaturesTest;
+    nfc: FeaturesTest;
+    notifications: FeaturesTest;
+    offlineCache: FeaturesTest;
+    paymentRequest: FeaturesTest;
+    persistentStorageRequest: FeaturesTest;
+    pushNotifications: FeaturesTest & {
+        silent: FeaturesTest;
     };
-    serviceWorker: FeatureTest;
-    share: FeatureTest;
-    storageEstimation: FeatureTest;
+    serviceWorker: FeaturesTest;
+    share: FeaturesTest;
+    storageEstimation: FeaturesTest;
 };
-export default _default;
+export default features;

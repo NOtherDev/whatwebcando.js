@@ -1,3 +1,8 @@
+declare global  {
+    interface Window {
+        ServiceWorkerRegistration: Function;
+    }
+}
 export default class FeatureTest {
     isSupported: boolean;
     prefixedWith: string | undefined;
