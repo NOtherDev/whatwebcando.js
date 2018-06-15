@@ -4,7 +4,7 @@ declare global  {
         budget: any;
     }
 }
-export declare const pushNotifications: FeatureTest & {
+declare const pushNotifications: FeatureTest & {
     silent: FeatureTest;
 };
 export default pushNotifications;

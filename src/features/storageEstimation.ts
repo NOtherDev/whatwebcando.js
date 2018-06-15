@@ -6,6 +6,6 @@ declare global {
     }
 }
 
-export const storageEstimation = FeatureTest.containedIn(navigator.storage, 'estimate')
+const storageEstimation = FeatureTest.containedIn(navigator.storage, 'estimate')
 
 export default storageEstimation

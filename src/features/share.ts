@@ -1,5 +1,5 @@
 import FeatureTest from '../featureTest'
 
-export const share = FeatureTest.navigatorContains('share')
+const share = FeatureTest.navigatorContains('share')
 
 export default share

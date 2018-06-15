@@ -1,3 +1,3 @@
 import FeatureTest from '../featureTest';
-export declare const deviceMemory: FeatureTest;
+declare const deviceMemory: FeatureTest;
 export default deviceMemory;

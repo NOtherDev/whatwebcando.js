@@ -7,5 +7,5 @@ declare global  {
         supports(token: string): boolean;
     }
 }
-export declare const manifest: FeatureTest;
+declare const manifest: FeatureTest;
 export default manifest;

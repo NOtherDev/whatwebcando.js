@@ -5,5 +5,5 @@ declare global  {
         vibrate?: number;
     }
 }
-export declare const notifications: FeatureTest;
+declare const notifications: FeatureTest;
 export default notifications;

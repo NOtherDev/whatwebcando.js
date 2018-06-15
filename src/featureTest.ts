@@ -56,4 +56,7 @@ export default class FeatureTest {
 
     static serviceWorkerRegistrationContains = (propertyName: string): FeatureTest =>
         FeatureTest.containedIn(window.ServiceWorkerRegistration && window.ServiceWorkerRegistration.prototype, propertyName)
+
+    static any = (...tests: FeatureTest[]): FeatureTest =>
+        tests.find(test => test.isSupported) || new FeatureTest(false)
 }

@@ -28,6 +28,9 @@ export const mediaSession = mediaSession_
 import nfc_ from './features/nfc'
 export const nfc = nfc_
 
+import notifications_ from './features/notifications'
+export const notifications = notifications_
+
 import offlineCache_ from './features/offlineCache'
 export const offlineCache = offlineCache_
 
@@ -49,8 +52,8 @@ export const share = share_
 import serviceWorker_ from './features/serviceWorker'
 export const serviceWorker = serviceWorker_
 
-import notifications_ from './features/notifications'
-export const notifications = notifications_
+import visibilityState_ from './features/visibilityState'
+export const visibilityState = visibilityState_
 
 // import needed for TypeScript to be able to generate proper type definitions for re-exports
 import FeaturesTest from './featureTest'
@@ -73,7 +76,8 @@ const features = {
     pushNotifications,
     serviceWorker,
     share,
-    storageEstimation
+    storageEstimation,
+    visibilityState
 }
 
 export default features

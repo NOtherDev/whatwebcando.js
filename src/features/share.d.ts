@@ -1,3 +1,3 @@
 import FeatureTest from '../featureTest';
-export declare const share: FeatureTest;
+declare const share: FeatureTest;
 export default share;

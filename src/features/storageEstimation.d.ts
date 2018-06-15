@@ -4,5 +4,5 @@ declare global  {
         storage: any;
     }
 }
-export declare const storageEstimation: FeatureTest;
+declare const storageEstimation: FeatureTest;
 export default storageEstimation;

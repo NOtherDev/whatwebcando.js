@@ -14,4 +14,5 @@ export default class FeatureTest {
     static documentContains: (propertyName: string) => FeatureTest;
     static windowContains: (propertyName: string) => FeatureTest;
     static serviceWorkerRegistrationContains: (propertyName: string) => FeatureTest;
+    static any: (...tests: FeatureTest[]) => FeatureTest;
 }

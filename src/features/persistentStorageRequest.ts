@@ -6,6 +6,6 @@ declare global {
     }
 }
 
-export const persistentStorageRequest = FeatureTest.containedIn(navigator.storage, 'persist')
+const persistentStorageRequest = FeatureTest.containedIn(navigator.storage, 'persist')
 
 export default persistentStorageRequest

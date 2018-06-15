@@ -9,6 +9,6 @@ declare global {
     }
 }
 
-export const manifest = FeatureTest.raw(() => document.createElement('link').relList.supports('manifest'))
+const manifest = FeatureTest.raw(() => document.createElement('link').relList.supports('manifest'))
 
 export default manifest

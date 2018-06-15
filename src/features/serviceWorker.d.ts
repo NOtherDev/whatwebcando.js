@@ -1,3 +1,3 @@
 import FeatureTest from '../featureTest';
-export declare const serviceWorker: FeatureTest;
+declare const serviceWorker: FeatureTest;
 export default serviceWorker;

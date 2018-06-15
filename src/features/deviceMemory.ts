@@ -1,5 +1,5 @@
 import FeatureTest from '../featureTest'
 
-export const deviceMemory = FeatureTest.navigatorContains('deviceMemory')
+const deviceMemory = FeatureTest.navigatorContains('deviceMemory')
 
 export default deviceMemory

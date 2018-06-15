@@ -4,5 +4,5 @@ declare global  {
         storage: any;
     }
 }
-export declare const persistentStorageRequest: FeatureTest;
+declare const persistentStorageRequest: FeatureTest;
 export default persistentStorageRequest;
